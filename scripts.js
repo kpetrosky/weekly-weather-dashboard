@@ -18,8 +18,17 @@ fetchWeather.addEventListener("click", function () {
       var temp = document.createElement('p');
       temp.textContent = `Temperature: ${data.main.temp} °F`;
 // same code for humidity, wind speed and anything else needed
+// temperature feels like
+      var feelsLike = document.createElement('p');
+      feelsLike.textContent = `Feels like: ${data.main.feels_like} °F`
+   //humidity
+      var humidity =document.createElement ('p');
+      humidity.textContent = `Humidity: ${data.main.humidity} °F`
+      //wind 
+      var windSpeed = document.createElement('p');
+      windSpeed.textContent = `Wind:${data.wind.speed} °F`
       currentWeather.innerHTML ="";
-      currentWeather.append(location,temp)
+      currentWeather.append(location,temp,feelsLike,humidity,windSpeed);
       //after creating new p tags dont forget to add in ln 22
       // let result = document.getElementById("result");
       // // result.innerHTML = `Temperature: ${data.main.temp} &deg;C`;
@@ -55,7 +64,15 @@ function weekForcast(lat, lon) {
         var temp =document.createElement('p')
         temp.textContent = `Temperature: ${element.main.temp} °F`
         // same code for humidity, wind speed and anything else needed
-        article.append (date,temp);
+        var feelsLike = document.createElement('p');
+      feelsLike.textContent = `Feels like: ${element.main.feels_like} °F`
+      //humidity
+      var humidity =document.createElement ('p');
+      humidity.textContent = `Humidity: ${element.main.humidity} °F`
+      //wind 
+      var windSpeed = document.createElement('p');
+      windSpeed.textContent = `Wind:${element.wind.speed} °F`
+        article.append (date,temp,feelsLike,humidity,windSpeed);
         forecast.append (article);
           //after creating new p tags dont forget to add in ln 57
       }
