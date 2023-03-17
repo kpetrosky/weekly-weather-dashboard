@@ -1,34 +1,27 @@
-var submit = document.getElementById("submit");
-var apiKey = '6c954c4894d6ffe51fdd55233b4b58b5';
-var displayText = document.getElementById('display')
-submit.addEventListener('click', function() {
-    var url = `https://api.openweathermap.org/data/2.5/forecast?lat={32.2540° N}&lon={110.9742° W}&appid=${apiKey}`;
-    console.log ("i made this");
-    fetch(url)
-    .then((response) => {
-        if (response.ok) {
-            return response.JSON();
-        } else {
-            throw new Error("Something isn't working!");
-        }
-    })
-    .then((data) => {
-        render(data);
-    });
-});
 
-function render(data) {
-    var geoUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=Tucson&limit=5&appid={API key}';
-    fetch(geoUrl)
-    .then((response) => {
-        if (response.ok) {
-            return response.JSON();
-        } else {
-            throw new Error("Something isn't working!");
-        }
+
+
+var fetchWeather = document.getElementById('weather-button');
+
+fetchWeather.addEventListener("click", function () {
+  var city = document.getElementById("city").value;
+  var apiKey = "30286bdb0d1bd12bbf351dc0bda01e86";
+  var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      let result = document.getElementById("result");
+      result.innerHTML = `Temperature: ${data.main.temp} &deg;C`;
+      var tempCelsius = data.main.temp; // Get the temperature in Celsius
+      var tempFahrenheit = (tempCelsius * 9 / 5) + 32;
+      console.log(`Temperature in Celsius: ${tempCelsius}`);
+      console.log(`Temperature in Fahrenheit: ${tempFahrenheit}`);
+      var weatherBox = document.createElement('p');
+      weatherBox.innerHTML = `Temperature: ${tempCelsius} &deg;C / ${tempFahrenheit} &deg;F`;
+      var weatherBoxes = document.querySelector('#weather-box');
+      // weatherBoxes.appendChild(weatherBox);
     })
-    .then((data) => {
-        displayText.textContent = JSON.stringify(data);
-    });
-}
+    .catch(error => console.log(error));
+});
 

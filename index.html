@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" type = "text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
     <h1> Weather Dashboard</h1>
 
-<body>
-
     <body>
-        <h2>
-        <nav>
-            <div>
-                <ul>
-                     <form>
-                        <label for="Search">Search for City:</label>
-                        <input type="text" id="search" name="name">
-                        <button id="submit">Submit</button>
-                    </form>
-                </ul>
-            </div>
-        </nav>
-        </h2>
-<h3>
-     <div id="display">
-        <p>Content will appear here.</p>
-      </div>
-</h3>
+        <h1>Weather App</h1>
+        <input type="text" id="city">
+        <!-- <button onclick="getWeather()">Get Weather</button> -->
+        <button id="weather-button">Get Weather</button>
+        <article class="forcast">
+            <article class="day-forecast">
+                <h3>Monday</h3>
+                <div id="result"></div>
+                <div id="display">
+                    <!-- <p>Content will appear here.</p> -->
+                    <div class="day"></div>
+                    <div class="icon"></div>
+                    <div class="temp"></div>
+                </div>
+            </article>
+            <article class="day-forecast">
+                <h3>Tuesday </h3>
+                <div id="result"></div>
+                <div id="display">
+                    <!-- <p>Content will appear here.</p> -->
+                    <div class="day"></div>
+                    <div class="icon"></div>
+                    <div class="temp"></div>
+                </div>
+            </article>
+            <article class="day-forecast">
+                <h3> Wednesday </h3>
+                <div id="result"></div>
+                <div id="display">
+                    <!-- <p>Content will appear here.</p> -->
+                    <div class="day"></div>
+                    <div class="icon"></div>
+                    <div class="temp"></div>
+                </div>
+            </article>
+            <article class="day-forecast">
+                <h3> Thursday </h3>
+                <div id="result"></div>
+                <div id="display">
+                    <!-- <p>Content will appear here.</p> -->
+                    <div class="day"></div>
+                    <div class="icon"></div>
+                    <div class="temp"></div>
+                </div>
+            </article>
+            <article class="day-forecast">
+                <h3> Friday </h3>
+                <div id="result"></div>
+                <div id="display">
+                    <!-- <p>Content will appear here.</p> -->
+                    <div class="day"></div>
+                    <div class="icon"></div>
+                    <div class="temp"></div>
+                </div>
+            </article>
+        </article>
 
-    <script src="scripts.js"></script>
-</body>
+        <script src="scripts.js"></script>
+    </body>
+
 </html>
