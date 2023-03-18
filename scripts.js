@@ -23,24 +23,14 @@ fetchWeather.addEventListener("click", function () {
       feelsLike.textContent = `Feels like: ${data.main.feels_like} °F`
    //humidity
       var humidity =document.createElement ('p');
-      humidity.textContent = `Humidity: ${data.main.humidity} °F`
+      humidity.textContent = `Humidity: ${data.main.humidity} %`
       //wind 
       var windSpeed = document.createElement('p');
-      windSpeed.textContent = `Wind:${data.wind.speed} °F`
+      windSpeed.textContent = `Wind:${data.wind.speed} MPH`
       currentWeather.innerHTML ="";
       currentWeather.append(location,temp,feelsLike,humidity,windSpeed);
       //after creating new p tags dont forget to add in ln 22
-      // let result = document.getElementById("result");
-      // // result.innerHTML = `Temperature: ${data.main.temp} &deg;C`;
-      // var tempCelsius = data.main.temp; // Get the temperature in Celsius
-      // var tempFahrenheit = (tempCelsius * 9 / 5) + 32;
-      // // console.log(`Temperature in Celsius: ${tempCelsius}`);
-      // console.log(`Temperature in Fahrenheit: ${tempFahrenheit}`);
-      // var weatherBox = document.createElement('p');
-      // weatherBox.textContent = `Temperature: ${tempCelsius} &deg;C / ${tempFahrenheit} &deg;F`;
-      // var weatherBoxes = document.querySelector('#weather-box');
-      // // weatherBoxes.appendChild(weatherBox);
-    })
+          })
     .catch(error => console.log(error));
 });
 
@@ -68,10 +58,10 @@ function weekForcast(lat, lon) {
       feelsLike.textContent = `Feels like: ${element.main.feels_like} °F`
       //humidity
       var humidity =document.createElement ('p');
-      humidity.textContent = `Humidity: ${element.main.humidity} °F`
+      humidity.textContent = `Humidity: ${element.main.humidity} %`
       //wind 
       var windSpeed = document.createElement('p');
-      windSpeed.textContent = `Wind:${element.wind.speed} °F`
+      windSpeed.textContent = `Wind:${element.wind.speed} MPH`
         article.append (date,temp,feelsLike,humidity,windSpeed);
         forecast.append (article);
           //after creating new p tags dont forget to add in ln 57
