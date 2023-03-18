@@ -3,15 +3,14 @@
     text-align: center;
     background: #1abc9c;
     color: white;
-    
     justify-items: center;
   }
 
 article{
     /* width: 300px; */
-    border: 10px solid rgb(128, 0, 100);
-    padding: 30px;
-    margin: 20px;
+    border: 3px solid rgb(128, 0, 100);
+    padding: 20px;
+    margin: 10px;
     flex-direction: column;
     display: flex;
     justify-content: right;
@@ -35,12 +34,19 @@ h3 {
  
 }
  .forecast {
-    border: 10px solid rebeccapurple;
+    /* border: 10px solid rebeccapurple; */
     display:flex;
     flex-direction: row;
     justify-content: right;
+    background-color: rgb(68, 146, 219);
+    color: #000;
    }
-
+/* button {
+    display: flex;
+    justify-content: left;
+    padding: 3px;
+    margin: 5px;
+} */
 /* .flexbox-centering {
     display: flex;
     justify-content: center;

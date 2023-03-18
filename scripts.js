@@ -71,5 +71,34 @@ function weekForcast(lat, lon) {
 
   })
 }
+// var fetchCities = document.createElementsByClassName('fetchCities');
 
+// fetchCities.addEventListener('click', function() {
+//     var city = document.getElementById("city").value;
+//     var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data);
+//             weekForcast(data.coord.lat, data.coord.lon);
+//             var currentWeather = document.getElementById('current-weather');
+//             var location = document.createElement('h2');
+//             location.textContent = data.name;
+//             var temp = document.createElement('p');
+//             temp.textContent = `Temperature: ${data.main.temp} °F`;
+//             // same code for humidity, wind speed and anything else needed
+//             // temperature feels like
+//             var feelsLike = document.createElement('p');
+//             feelsLike.textContent = `Feels like: ${data.main.feels_like} °F`;
+//             // humidity
+//             var humidity = document.createElement('p');
+//             humidity.textContent = `Humidity: ${data.main.humidity} %`;
+//             // wind 
+//             var windSpeed = document.createElement('p');
+//             windSpeed.textContent = `Wind: ${data.wind.speed} MPH`;
+//             currentWeather.innerHTML = "";
+//             currentWeather.append(location, temp, feelsLike, humidity, windSpeed);
+//         })
+//         .catch(error => console.log(error));
+// });
