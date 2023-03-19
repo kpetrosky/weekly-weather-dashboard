@@ -4,9 +4,11 @@
     background: #1abc9c;
     color: white;
     justify-items: center;
-  }
+    border: 3px solid rgb(128, 0, 100);
 
-article{
+}
+
+article {
     /* width: 300px; */
     border: 3px solid rgb(128, 0, 100);
     padding: 20px;
@@ -31,16 +33,60 @@ h2 {
 h3 {
     display: flex;
     font-size: 25px;
- 
+
 }
- .forecast {
+
+div {
+    display: flex;
+    justify-content: center;
+    border: 5px;
+    color: #000;
+    align-self: center;
+
+}
+
+.forecast {
     /* border: 10px solid rebeccapurple; */
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: right;
     background-color: rgb(68, 146, 219);
-    color: #000;
-   }
+    color: #fdfbfb;
+}
+
+nav {
+    background-color: #f1f1f1;
+    /* overflow: hidden; */
+    max-width: 800px;
+    justify-content: flex-start;
+    justify-items: start;
+
+}
+
+nav a {
+    float: inline-start;
+    padding: 16px;
+    text-align: left;
+    color: black;
+    flex-direction: column;
+    display: block;
+
+
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* nav {
+      display: flex;
+    flex-direction: column;
+    float: left;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+} */
 /* button {
     display: flex;
     justify-content: left;
@@ -93,5 +139,3 @@ h3 {
     color: #fff;
     display: block;
 } */
-
-
