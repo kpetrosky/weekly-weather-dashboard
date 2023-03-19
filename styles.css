@@ -4,18 +4,19 @@
     background: #1abc9c;
     color: white;
     justify-items: center;
-    border: 3px solid rgb(128, 0, 100);
+    border: 3px solid #800064;
+    align-items: center;
 
 }
 
 article {
     /* width: 300px; */
     border: 3px solid rgb(128, 0, 100);
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     flex-direction: column;
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 
 h1 {
@@ -27,21 +28,30 @@ h1 {
 
 h2 {
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 h3 {
     display: flex;
-    font-size: 25px;
+    font-size: 15px;
 
+}
+
+section {
+    display: block;
+    justify-content: start;
+    border: 3px solid rgb(128, 0, 100); 
+    float: inline-start;
+    padding: 3px;
+    text-align: left;
 }
 
 div {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     border: 5px;
     color: #000;
-    align-self: center;
+    /* align-self: center; */
 
 }
 
@@ -49,7 +59,7 @@ div {
     /* border: 10px solid rebeccapurple; */
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    /* justify-content: right; */
     background-color: rgb(68, 146, 219);
     color: #fdfbfb;
 }
@@ -65,7 +75,7 @@ nav {
 
 nav a {
     float: inline-start;
-    padding: 16px;
+    padding: 5px;
     text-align: left;
     color: black;
     flex-direction: column;
