@@ -20,10 +20,13 @@ article {
 }
 
 h1 {
-    display: flex;
-    align-items: center;
-    font-size: 70px;
-    justify-content: center;
+     display: block;
+    /* align-items: center;  */
+    font-size: 70px; 
+    /* justify-content: center;
+    font-weight: bold;  */
+   
+    
 }
 
 h2 {
@@ -34,17 +37,31 @@ h2 {
 h3 {
     display: flex;
     font-size: 15px;
+    
 
 }
+main {
 
-/* section {
-    display: block;
+    display: inline-block;
+    justify-content: center;
+    border: 1px  solid black;
+    /* float: inline-start; */
+    padding: 10px ;
+    margin: 10px ;
+    /* align-items: start; */
+   /* align-content: center; */
+    
+}
+
+section {
+    display: inline-block;
     justify-content: start;
-    border: 3px solid rgb(128, 0, 100); 
-    float: inline-start;
+    border: 3px solid rgb(128, 0, 100);
+    /* float: inline-start; */
     padding: 3px;
-    text-align: left;
-} */
+    /* justify-content: center; */
+}
+
 
 div {
     display: flex;
@@ -52,6 +69,7 @@ div {
     border: 5px;
     color: #000;
     /* align-self: center; */
+    
 
 }
 
@@ -67,19 +85,19 @@ div {
 nav {
     background-color: #f1f1f1;
     /* overflow: hidden; */
-    max-width: 800px;
-    justify-content: flex-start;
-    justify-items: start;
+    max-width: 100px;
+    /* justify-content: flex-start; */
+    /* justify-items: start; */
 
 }
 
 nav a {
-    float: inline-start;
+    /* float: inline-start; */
     padding: 5px;
-    text-align: left;
+    /* align-items: start; */
     color: black;
     flex-direction: column;
-    display: block;
+    display: inline-block;
 
 
 }
