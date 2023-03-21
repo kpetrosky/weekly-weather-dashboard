@@ -37,14 +37,14 @@ h3 {
 
 }
 
-section {
+/* section {
     display: block;
     justify-content: start;
     border: 3px solid rgb(128, 0, 100); 
     float: inline-start;
     padding: 3px;
     text-align: left;
-}
+} */
 
 div {
     display: flex;
