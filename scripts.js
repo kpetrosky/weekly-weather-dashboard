@@ -73,52 +73,91 @@ function weekForcast(lat, lon) {
 }
 
 //making the other cities work
-
 var fetchCities = document.getElementsByClassName('fetchCities');
+var cities = [
+  { name: "Atlanta", lat: "33.7490", lon: "-84.3880" },
+  { name: "Denver", lat: "39.7392", lon: "-104.9903" },
+  { name: "Seattle", lat: "47.6062", lon: "-122.3321" },
+  { name: "Orlando", lat: "28.5383", lon: "-81.3792" },
+  { name: "New York", lat: "40.7128", lon: "-74.0060" },
+  { name: "Chicago", lat: "41.8781", lon: "-87.6298" },
+  { name: "Austin", lat: "30.2672", lon: "-97.7431" }
+];
 
-// console.log(data);
-var apiKey = "30286bdb0d1bd12bbf351dc0bda01e86"; 
-var url = `https://api.openweathermap.org/data/2.5/weather?q=${fetchCities}&appid=${apiKey}&units=imperial`;
+var apiKey = "30286bdb0d1bd12bbf351dc0bda01e86";
 
 function weekForcast(lat, lon) {
   var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
 
-   
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        var forecast = document.querySelector('.forecast');
-        forecast.innerHTML = "";
-        console.log(data);
-        for (var i = 0; i < fetchCities.length; i++) {
-          fetchCities[i].addEventListener('click', function () {
-            // code for fetching weather data
-          });
+  fetch(url)
+  console.log('can you see me?')
+    .then(response => response.json())
+    
+    .then(data => {
+      console.log(data);
+      var forecast = document.querySelector('.forecast');
+      forecast.innerHTML = "";
+      
+      data.list.forEach(element => {
+        if (element.dt_txt.includes('15:00:00')) {
+          let article = document.createElement('article');
+          article.setAttribute('class', 'day-forecast');
+          
+          var date = document.createElement('h3')
+          date.textContent = element.dt_txt.split(' ')[0];
+          var temp = document.createElement('p')
+          temp.textContent = `Temperature: ${element.main.temp} °F`
+          
+          var feelsLike = document.createElement('p');
+          feelsLike.textContent = `Feels like: ${element.main.feels_like} °F`
+          
+          var humidity = document.createElement('p');
+          humidity.textContent = `Humidity: ${element.main.humidity} %`
+          
+          var windSpeed = document.createElement('p');
+          windSpeed.textContent = `Wind: ${element.wind.speed} MPH`
+          
+          article.append(date, temp, feelsLike, humidity, windSpeed);
+          forecast.append(article);
         }
-        data.list.forEach(element => {
-          if (element.dt_txt.includes('15:00:00')) {
-            let article = document.createElement('article');
-            article.setAttribute('class', 'day-forecast');
-            var date = document.createElement('h3')
-            date.textContent = element.dt_txt.split(' ')[0];
-            var temp = document.createElement('p')
-            temp.textContent = `Temperature: ${element.main.temp} °F`
-            // same code for humidity, wind speed and anything else needed
-            var feelsLike = document.createElement('p');
-            feelsLike.textContent = `Feels like: ${element.main.feels_like} °F`
-            //humidity
-            var humidity = document.createElement('p');
-            humidity.textContent = `Humidity: ${element.main.humidity} %`
-            //wind 
-            var windSpeed = document.createElement('p');
-            windSpeed.textContent = `Wind:${element.wind.speed} MPH`
-            article.append(date, temp, feelsLike, humidity, windSpeed);
-            forecast.append(article);
-            //after creating new p tags dont forget to add 
-          }
-        });
-      })
-      .catch(error => console.log(error));
-  }
+      });
+    })
+    .catch(error => console.log(error));
+}
+
+for (var i = 0; i < fetchCities.length; i++) {
+  var city = cities.find(c => c.name === fetchCities[i].classList[0]);
+  fetchCities[i].setAttribute('data-lat', city.lat);
+  fetchCities[i].setAttribute('data-lon', city.lon);
   
+  fetchCities[i].addEventListener('click', function () {
+    // Get lat and lon for the clicked city
+    var lat = this.getAttribute('data-lat');
+    var lon = this.getAttribute('data-lon');
+    // Call the weekForcast function
+    weekForcast(lat, lon);
+  });
+}
+
+
+// Store a value in localStorage
+// define a function that processes some data
+// function processForecast(data) {
+//   var processedData = [];
+//   for (let i = 0; i < data.list.length; i++) {
+//     const element = data.list[i];
+//     // process each element of the data and add it to the processedData array
+//     // ...
+//   }
+//   return processedData;
+// }
+
+// call the function and store the result in localStorage
+// var processedData = document.getElementById('day-forecast')
+// localStorage.setItem('forecast', JSON.stringify(processed));
+
+// // retrieve the stored data from localStorage and use it
+// let storedData = localStorage.getItem('forecast');
+// let retrievedData = JSON.parse(storedData);
+// // use the retrieved data however you need to
+
