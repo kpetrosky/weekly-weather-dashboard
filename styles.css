@@ -6,15 +6,13 @@
     border: 3px solid #800064;
     display: flex;
     font-size: 25px;
-
-
 }
 
 article {
     /* width: 300px; */
     /* border: 3px solid rgb(128, 0, 100); */
-    padding: 1px;
-    margin: 1px;
+    padding: 5px;
+    margin: 5px;
     flex-direction: column;
     display: inline-block;
     justify-content: center;
@@ -75,13 +73,36 @@ div {
 nav {
     background-color: #f1f1f1;
     /* overflow: hidden; */
-    max-width: 100px;
+    max-width: 150px;
     /* justify-content: flex-start; */
     /* justify-items: start; */
+    /* padding: 15px; */
+    align-items: start;
+    color: black;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
     border: 2px black;
+   
 
 }
 
+/* nav a {
+    float: inline-start; 
+    padding: 15px;
+    align-items: start;
+    color: black;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px black;
+
+} */
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
 .fetchCities {
     display: block;
     justify-content: space-evenly;
@@ -92,25 +113,23 @@ nav {
 .box {
     width: 100px;
     height: 100px;
-    background-color: rgb(41, 30, 100);
+    background-color: rgb(48, 37, 109);
     margin: 20px auto;
 }
 
-nav a {
-    /* float: inline-start;  */
-    padding: 5px;
-    align-items: start;
-    color: black;
-    flex-direction: column;
-    display: inline-block;
-    justify-content: space-evenly;
 
+button {
+    display: flex;
+    justify-content: left;
+    padding: 3px;
+    margin: 5px;
 }
-
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
+/* .flexbox-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+} */
 
 /* nav {
       display: flex;
@@ -119,18 +138,6 @@ nav a:hover {
     display: block;
     text-align: center;
     overflow: hidden;
-} */
-/* button {
-    display: flex;
-    justify-content: left;
-    padding: 3px;
-    margin: 5px;
-} */
-/* .flexbox-centering {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
 } */
 
 /* .ul {
