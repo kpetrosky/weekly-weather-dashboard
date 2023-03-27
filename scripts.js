@@ -80,15 +80,7 @@ var cityName = document.querySelector('city name');
   function history(event) {
 console.log(event.target.textContent);
  var city = event.target.textContent ;
-  // var cityName = [
-  //   { name: "Atlanta", lat: "33.7490", lon: "-84.3880" },
-  //   { name: "Denver", lat: "39.7392", lon: "-104.9903" },
-  //   { name: "Seattle", lat: "47.6062", lon: "-122.3321" },
-  //   { name: "Orlando", lat: "28.5383", lon: "-81.3792" },
-  //   { name: "New York", lat: "40.7128", lon: "-74.0060" },
-  //   { name: "Chicago", lat: "41.8781", lon: "-87.6298" },
-  //   { name: "Austin", lat: "30.2672", lon: "-97.7431" }
-  // ];
+
 
 var apiKey = "30286bdb0d1bd12bbf351dc0bda01e86";
 // fetchCities.addEventListener("click", function (lat, lon) {
